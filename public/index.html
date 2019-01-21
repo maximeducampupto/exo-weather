@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS-Meteo</title>
+</head>
+<body>
+
+<div class="container main">
+
+    <form class="town-input">
+        <div class="form-group">
+            <input type="text" class="form-control" id="city_input" placeholder="Ex: Fourmies..." autofocus>
+        </div>
+        <div class="col-md-12 text-center">
+            <button type="submit" class="town-input-submit" id="submitButton">Valider</button>
+        </div>
+    </form>
+
+    <div class="col-md-12 text-center" id="current_date"></div>
+
+    <div class="row">
+        <div class="col-md-6 col-xs-12">
+            <p class="text-right big-temp">
+                <span id="bigTemp"></span>
+            </p>
+        </div>
+        <div class="col-md-6 mt-5 col-xs-12">
+            <p>Temp max: <span id="tempMax"></span>°</p>
+            <p>Temp min: <span id="tempMin"></span>°</p>
+            <p>Pres. atmosphérique: <span id="pressure"></span></p>
+            <p>Vitesse du vent: <span id="wind"></span> km/h</p>
+            <p>Humidité: <span id="humidity"></span> %</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <span id="lon"></span><span id="lat"></span>
+    </div>
+
+</div>
+
+
+
+<script src="exercice.js"></script>
+
+<script>
+    var now = new Date();
+    let options = { year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('current_date').innerHTML = now.toLocaleDateString('fr-FR', options)
+</script>
+
+</body>
+</html>
